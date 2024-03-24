@@ -6,6 +6,8 @@ function App() {
   const [tasks, setTasks] = useState([{title: "Wash Car", description: "Bedroom needs to be dusted and vacuumed."}, {title: "Walk Dog", description: "The dog needs to be walked twice a day."}]);
   const [newTitle, setNewTitle] = useState('');
   const [newDescription, setNewDescription] = useState('')
+  const [buttonText, setButaskttonText] = useState('Create')
+  const [editTask, setEdit] = useState(false)
   return (
     <div className="App">
       <h1>
@@ -23,7 +25,7 @@ function App() {
           setNewTitle('')
           setNewDescription('')
         }
-      }} >Create</button>
+      }} >{buttonText}</button>
     </div>
   );
 }
