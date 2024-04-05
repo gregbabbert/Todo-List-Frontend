@@ -8,12 +8,19 @@ function App() {
   const [newDescription, setNewDescription] = useState('')
   const [buttonText, setButaskttonText] = useState('Create')
   const [editTask, setEdit] = useState(false)
+
+  const deleteTask = i => {
+    let newTasks = tasks;
+    newTasks.splice(i,1);
+    setTasks(newTasks);
+  }
+
   return (
     <div className="App">
       <h1>
         Todo List
       </h1>
-      {tasks.map((task, i) => <ListItem key={task.title + i} task={task}/>)}
+      {tasks.map((task, i) => <ListItem key={task.title + i} task={task} index={i} deleteTask={deleteTask} />)}
       <h5>Title</h5>
       <input type="text" value={newTitle} onChange={(e) => setNewTitle(e.target.value)} >
       </input>
